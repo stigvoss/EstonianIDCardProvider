@@ -43,7 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Encryption.cs" />
     <Compile Include="EstonianIDCardProviderExt.cs" />
+    <Compile Include="KeyFileAccess.cs" />
+    <Compile Include="KeyGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SmartCardProvider.cs" />
   </ItemGroup>

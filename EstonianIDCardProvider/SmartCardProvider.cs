@@ -19,9 +19,32 @@ namespace EstonianIDCardProvider
             }
         }
 
-        public override byte[] GetKey(KeyProviderQueryContext ctx)
+        public override byte[] GetKey(KeyProviderQueryContext context)
         {
-            throw new NotImplementedException();
+            byte[] key, encryptedKey;
+            string databaseFilePath = context.DatabaseIOInfo.Path;
+            
+            using (KeyFileAccess fileAccess = new KeyFileAccess(databaseFilePath))
+            using (KeyGenerator keyGenerator = new KeyGenerator())
+            using (Encryption encryption = new Encryption())
+            {
+                if (context.CreatingNewKey)
+                {
+                    fileAccess.Create();
+                    key = keyGenerator.GenerateKey();
+                    encryptedKey = encryption.EncryptKey(key);
+                    fileAccess.Write(encryptedKey);
+                }
+                else
+                {
+                    fileAccess.Open();
+                }
+
+                encryptedKey = fileAccess.Read();
+                key = encryption.DecryptKey(encryptedKey);
+            }
+
+            return key;
         }
     }
 }

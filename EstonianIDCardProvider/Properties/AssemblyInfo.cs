@@ -6,10 +6,10 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("EstonianIDCardProvider")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("KeePass Key Provider to utilize the Estonian national ID card")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("EstonianIDCardProvider")]
+[assembly: AssemblyCompany("Stig Voss")]
+[assembly: AssemblyProduct("KeePass Plugin")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

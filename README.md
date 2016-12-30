@@ -5,6 +5,13 @@ KeePass Key Provider to utilize the Estonian national ID card
 This provider may work with other Smart Cards, but it was designed for and tested with the Estonian national ID card.
 Read more about the Estonian national ID card [here](https://open-eid.github.io/).
 
+### Tested configurations
+**Configuration \#1**
+KeePass 2.34
+Windows 10 1607
+Estonian national ID card
+OMNIKEY 4321 smart card reader
+
 ## How it works
 The provider will generate a KBFX-file next to the KeePass KDBX-file containing a random generated 128 byte key encrypted using the Estonian national ID card's public key.
 
